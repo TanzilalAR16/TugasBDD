@@ -10,10 +10,9 @@ const produkSchema = new Schema({
         required: true
     },
 }, {
-    timestamps: false,
-    collection: "produk"
+    timestamps: false
 });
 
-const Produk = mongoose.model("produk", produkSchema);
+const Produk = mongoose.model("Produk", produkSchema);
 
 export default Produk;
