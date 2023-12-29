@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 //import mongodb, { MongoClient } from "mongodb";
 import mongoose from "mongoose";
-import produkRouter from "./routes/produk.js";
+import biayaRouter from "./routes/biaya.js";
 
 dotenv.config();
 //const client = new MongoClient(process.env.MONGODB_URL)
@@ -20,10 +20,8 @@ app.get('/', (req, res) => {
     res.send('hello world!');
 })
 
-app.use('/produk', produkRouter);
+app.use('/biaya', biayaRouter)
 
 
 mongoose.connect("mongodb+srv://tanzilal8:root@tugasbdd.plnite9.mongodb.net/?retryWrites=true&w=majority").then(() => app.listen(port, () => console.log(`Server running on port: ${port}`)))
 .catch((error) => console.log(error.message));
-
-app.use("/produk", produkRouter)
